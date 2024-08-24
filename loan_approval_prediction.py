@@ -78,3 +78,15 @@ X_train_prediction = classifier.predict(X_train)
 training_data_accuray = accuracy_score(X_train_prediction,Y_train)
 
 print('Accuracy on training data : ', training_data_accuray)
+
+scores = {'Accuracy on training data ': training_data_accuray, 'Accuracy on test data ': test_data_accuray}
+labels = list(scores.keys())
+values = list(scores.values())
+
+plt.figure(figsize=(8, 5))
+plt.bar(labels, values, color=['blue', 'green'])
+plt.ylim(0, 1)
+plt.ylabel('Accuracy')
+plt.title('Training vs Test Accuracy')
+plt.show()
+
